@@ -12,9 +12,18 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}",
+          "raw": "https://695bcf701d8041d5eeb88ad5.mockapi.io/testapi/api/v1/users",
+          "protocol": "https",
           "host": [
-            "{{baseUrl}}"
+            "695bcf701d8041d5eeb88ad5",
+            "mockapi",
+            "io"
+          ],
+          "path": [
+            "testapi",
+            "api",
+            "v1",
+            "users"
           ]
         }
       },
@@ -60,11 +69,18 @@
           }
         },
         "url": {
-          "raw": "{{baseUrl}}/{{id}}",
+          "raw": "https://695bcf701d8041d5eeb88ad5.mockapi.io/testapi/api/v1/users/{{id}}",
+          "protocol": "https",
           "host": [
-            "{{baseUrl}}"
+            "695bcf701d8041d5eeb88ad5",
+            "mockapi",
+            "io"
           ],
           "path": [
+            "testapi",
+            "api",
+            "v1",
+            "users",
             "{{id}}"
           ]
         }
@@ -109,11 +125,18 @@
           "raw": ""
         },
         "url": {
-          "raw": "{{baseUrl}}/{{id}}",
+          "raw": "https://695bcf701d8041d5eeb88ad5.mockapi.io/testapi/api/v1/users/{{id}}",
+          "protocol": "https",
           "host": [
-            "{{baseUrl}}"
+            "695bcf701d8041d5eeb88ad5",
+            "mockapi",
+            "io"
           ],
           "path": [
+            "testapi",
+            "api",
+            "v1",
+            "users",
             "{{id}}"
           ]
         }
@@ -139,7 +162,7 @@
           "listen": "test",
           "script": {
             "exec": [
-              "pm.test.skip(\"le nom de l'utilisateur est correct\", function () { pm.expect(pm.response.json().lastname).to.eql(\"Tina\")})"
+              "pm.test(\"le nom de l'utilisateur est correct\", function () { pm.expect(pm.response.json().lastname).to.eql(\"Tina\")})"
             ],
             "type": "text/javascript",
             "packages": {},
@@ -158,11 +181,18 @@
           "raw": ""
         },
         "url": {
-          "raw": "{{baseUrl}}/{{id}}",
+          "raw": "https://695bcf701d8041d5eeb88ad5.mockapi.io/testapi/api/v1/users/{{id}}",
+          "protocol": "https",
           "host": [
-            "{{baseUrl}}"
+            "695bcf701d8041d5eeb88ad5",
+            "mockapi",
+            "io"
           ],
           "path": [
+            "testapi",
+            "api",
+            "v1",
+            "users",
             "{{id}}"
           ]
         }
@@ -210,11 +240,18 @@
           "raw": ""
         },
         "url": {
-          "raw": "{{baseUrl}}/{{id}}",
+          "raw": "https://695bcf701d8041d5eeb88ad5.mockapi.io/testapi/api/v1/users/{{id}}",
+          "protocol": "https",
           "host": [
-            "{{baseUrl}}"
+            "695bcf701d8041d5eeb88ad5",
+            "mockapi",
+            "io"
           ],
           "path": [
+            "testapi",
+            "api",
+            "v1",
+            "users",
             "{{id}}"
           ]
         }
@@ -251,11 +288,18 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/{{id}}",
+          "raw": "https://695bcf701d8041d5eeb88ad5.mockapi.io/testapi/api/v1/users/{{id}}",
+          "protocol": "https",
           "host": [
-            "{{baseUrl}}"
+            "695bcf701d8041d5eeb88ad5",
+            "mockapi",
+            "io"
           ],
           "path": [
+            "testapi",
+            "api",
+            "v1",
+            "users",
             "{{id}}"
           ]
         }
@@ -283,9 +327,18 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}",
+          "raw": "https://695bcf701d8041d5eeb88ad5.mockapi.io/testapi/api/v1/users",
+          "protocol": "https",
           "host": [
-            "{{baseUrl}}"
+            "695bcf701d8041d5eeb88ad5",
+            "mockapi",
+            "io"
+          ],
+          "path": [
+            "testapi",
+            "api",
+            "v1",
+            "users"
           ]
         }
       },

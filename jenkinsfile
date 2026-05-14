@@ -26,27 +26,31 @@ pipeline {
         }
         stage('Checkout GitHub') {
             steps {
-                sshagent(credentials: ['github-ssh-key']) {
+                withCredentials([sshUserPrivateKey(
+                    credentialsId: 'github-ssh-key',
+                    keyFileVariable: 'SSH_KEY'
+                )]) {
                     sh '''
-                    apt-get update && apt-get install -y git openssh-client
-                    ssh-keyscan github.com >> ~/.ssh/known_hosts
-                    git clone git@github.com:SoniaSlimi/Projet-Jenkins.git .
+                        apt-get update && apt-get install -y git openssh-client
+                        mkdir -p ~/.ssh
+                        cp $SSH_KEY ~/.ssh/id_rsa
+                        chmod 600 ~/.ssh/id_rsa
+                        ssh-keyscan github.com >> ~/.ssh/known_hosts
+                        git clone git@github.com:SoniaSlimi/Projet-Jenkins.git .
                     '''
                 }
             }
         }
         stage('Install Newman') {
             steps {
-                sh '''
-                npm install -g newman newman-reporter-html
-                '''
+                sh 'npm install -g newman newman-reporter-html'
             }
         }
         stage('Run Postman Tests') {
             steps {
                 sh """
                 newman run "https://api.postman.com/collections/${COLLECTION_UID}?access_key=${POSTMAN_API_KEY}" \
-                -e env_config/${params.ENV}.json \
+                -e env_config/${params.Env}.json \
                 -r cli,html \
                 --reporter-html-export rapport.html
                 """

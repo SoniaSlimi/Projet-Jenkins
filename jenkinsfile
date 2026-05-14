@@ -26,10 +26,13 @@ pipeline {
         }
         stage('Checkout GitHub') {
             steps {
-                sh '''
-                apt-get update && apt-get install -y git openssh-client
-                git clone git@github.com:SoniaSlimi/Projet-Jenkins.git .
-                '''
+                sshagent(credentials: ['github-ssh-key']) {
+                    sh '''
+                    apt-get update && apt-get install -y git openssh-client
+                    ssh-keyscan github.com >> ~/.ssh/known_hosts
+                    git clone git@github.com:SoniaSlimi/Projet-Jenkins.git .
+                    '''
+                }
             }
         }
         stage('Install Newman') {

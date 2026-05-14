@@ -6,8 +6,8 @@ pipeline {
     }
     parameters {
         choice(
-            name: 'ENV',
-            choices: ['dev', 'staging', 'prod'],
+            name: 'Env',
+            choices: ['Test', 'Preprod', 'Prod'],
             description: 'Choisir l\'environnement'
         )
     }
